@@ -1,0 +1,35 @@
+CREATE TABLE member(
+	memberidx INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	memberId VARCHAR(50) NOT NULL,
+	memberPw VARCHAR(50) NOT NULL,
+	memberName VARCHAR(30) NOT NULL,
+	memberEmail VARCHAR(100) NOT NULL,
+	memberAddr VARCHAR(100)
+);
+
+
+DROP TABLE member;
+
+ALTER TABLE member ADD UNIQUE INDEX members_brainidx_idx(memberidx);
+
+INSERT INTO member(memberidx,memberId,memberPw,memberName,memberEmail,memberAddr) VALUES(13,'ID3','4a5a6aPWD','김삼번','cc@gmail.com','대구 양구 율하동');
+
+SELECT * FROM member;
+
+
+/* REST API 연습용 테이블 */
+CREATE TABLE BOOK_INFO_TBL
+  (
+    BOOK_KEY            INT NOT NULL,
+    BOOK_REG_NO         VARCHAR(12) NOT NULL,
+    BOOK_TITLE          VARCHAR(1000),
+    BOOK_AUTHOR         VARCHAR(1000),
+    BOOK_PUBLISHER      VARCHAR(1000)
+  );
+  
+INSERT INTO BOOK_INFO_TBL(BOOK_KEY,BOOK_REG_NO,BOOK_TITLE,BOOK_AUTHOR,BOOK_PUBLISHER) 
+							VALUES(13,'ID3','1a2a3aTitle','김삼번','대구 양구 율하동');
+INSERT INTO BOOK_INFO_TBL(BOOK_KEY,BOOK_REG_NO,BOOK_TITLE,BOOK_AUTHOR,BOOK_PUBLISHER) 
+							VALUES(14,'ID4','3a2a1aTitle','김사번','대구 서구 율하동');
+
+SELECT * FROM BOOK_INFO_TBL
